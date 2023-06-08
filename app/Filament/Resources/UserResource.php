@@ -31,8 +31,7 @@ class UserResource extends Resource
                 Forms\Components\Select::make('country_id')
                     ->label('Country')
                     ->relationship('country', 'name')
-                    ->preload()
-                    ->required(),
+                    ->preload(),
                 Forms\Components\TextInput::make('password')
                     ->password()
                     ->dehydrateStateUsing(fn ($state) => bcrypt($state))
